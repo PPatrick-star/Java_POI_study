@@ -1,0 +1,16 @@
+[
+  {
+    "memberPk": 1,
+    "nickName": "강감찬",
+    "phoneNumber": "010-0000-0000",
+    "joinDateTime": "2021-12-31 23:59:59",
+    "activeDateTime": "2021-12-01 00:00:00"
+  },
+  {
+    "memberPk": 2,
+    "nickName": "을지문덕",
+    "phoneNumber": "010-1111-1111",
+    "joinDateTime": "2021-12-31 23:59:59",
+    "activeDateTime": "2021-12-01 00:00:00"
+  }
+]
