@@ -1,6 +1,7 @@
 package kr.poi.study.api;
 
 import kr.poi.study.domain.Member;
+import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -25,10 +26,14 @@ public class ExcelAPI {
         //new sheet
         Sheet sheet1 = Objects.requireNonNull(wb).createSheet("new sheet");
 
-
-        final List<Member> memberMockData = readModelVo(Member.class, memberMockup);
-
+        // excel 에 넣을 데이터
         Integer[] list = {0, 1, 2, 3, 4, 5, 6, 7};
+
+        List<Member> data = readMockup();
+        int maxRowIndex = data.size();
+        int maxCellIndex = data.get(0).toString().length();
+        System.out.printf("%d %d",maxRowIndex, maxCellIndex);
+
 
         Iterator<Integer> iterator = Arrays.stream(list).iterator();
         int rowIndex = 0;
@@ -77,5 +82,13 @@ public class ExcelAPI {
                 IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Member> readMockup() {
+
+        final List<Member> memberMockData = readModelVo(Member.class, memberMockup);
+
+        return memberMockData;
+
     }
 }
